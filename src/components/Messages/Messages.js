@@ -72,7 +72,9 @@ class Messages extends React.Component {
           .child(this.state.user.uid)
           .onDisconnect()
           .remove(err => {
-            console.error(err);
+            if (err !== null) {
+              console.error(err);
+            }
           });
       }
     });
